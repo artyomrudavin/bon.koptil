@@ -48,6 +48,21 @@ b, strong {
 	font-weight: bold;
 }
 
+.visible-xs {
+	display: none;
+}
+
+.menu-wrapper {
+	
+}
+
+.menu__fixed {
+	position: fixed;
+	top: 0;
+	z-index: 6;
+	margin-top: 0;
+}
+
 
 
 @import "media"; // Always at the end

@@ -38,6 +38,245 @@ body
 b, strong
 	font-weight: bold
 
+// a
+// 	text-decoration: none
+
+.visible-xs
+	display: none
+
+.menu__fixed
+	position: fixed
+	top: 0
+	z-index: 6
+	margin-top: 0
+
+.menu-wrapper
+	background-color: #fff
+	width: 100%
+	.container
+		.row
+			.col-12
+				.menu
+					display: flex
+					justify-content: space-between
+					border-bottom: 2px solid #ececec
+					margin-bottom: 0
+					li
+						list-style: none
+						.menu-item
+							font-size: 15px
+							text-align: center
+							font-weight: 700
+							cursor: pointer
+							text-transform: uppercase
+							padding: 12px 0
+							border-bottom: 2px solid transparent
+							color: #000
+							display: block
+							margin: 0 5px -2px
+							&:hover
+								border-bottom: 2px solid #fc0
+								color: #fc0
+								text-decoration: none
+
+.header
+	margin-top: 20px
+	background: url(../img/zol-f2.jpg) no-repeat 50% 59% $light-grey
+	position: relative
+	padding-bottom: 70px
+	overflow: hidden
+	margin-bottom: 0px
+	.container
+		.row
+			.col-sm-7
+				.logo
+					margin-top: 54px
+					height: 44px
+					display: flex
+					img
+						margin-right: 15px
+					.logo-text
+						font-size: 16px
+						font-weight: 100
+						color: #111
+						text-align: left
+						white-space: pre-line
+						line-height: 22px
+						height: 44px
+			.col-sm-5
+				position: relative
+				display: flex
+				justify-content: flex-end
+				.phone
+					margin: 40px 0 10px
+					display: flex
+					flex-direction: column
+					.phone-number
+						position: relative
+						font-size: 28px
+						line-height: 31px
+						color: #111
+						&:before
+							content: ""
+							display: block
+							width: 21px
+							height: 21px
+							background: url(../img/phone.png) no-repeat 50% 50%
+							position: absolute
+							left: -35px
+							top: 5px
+					.phone-text
+						color: #111
+						font-size: 16px
+		.row
+			.caption
+				margin-top: 32px
+				.h1
+					font-size: 42px
+					line-height: 43px
+					white-space: pre-line
+				.caption-subs
+					font-weight: 300
+					color: #111
+					font-size: 21px
+			.box-present
+				.h-present-1
+					margin-top: 33px
+					font-weight: bold
+					font-size: 20px
+					span
+						color: #ff4200
+				ul
+					margin: 0
+					padding: 0
+					list-style: none
+					margin-top: 14px
+					li
+						margin-bottom: 10px
+						padding-left: 75px
+						height: 56px
+						font-weight: bold
+						font-size: 16px
+						letter-spacing: -0.5px
+						div
+							font-weight: normal
+							text-decoration: line-through
+							color: #5d5d5d
+							span
+								display: inline-block
+								margin-left: 10px
+								font-weight: bold
+								color: red
+								text-decoration: none
+								font-size: 18px
+					.box-present-1
+						background-image: url(../img/p-shepa.png)
+						background-repeat: no-repeat
+						background-size: 54px
+					.box-present-2
+						background-image: url(../img/p-shagat.png)
+						background-repeat: no-repeat
+						background-size: 56px
+					.box-present-3
+						background-image: url(../img/p-book.png)
+						background-repeat: no-repeat
+						background-size: 54px
+			.topForm
+				margin-top: 70px
+				.topform-content
+					border: 1px solid #333
+					background: #fff
+					padding-top: 10px
+					padding-bottom: 20px
+					margin-bottom: 15px
+					.topform-title
+						color: #111
+						font-size: 17px
+						font-weight: 300
+						white-space: pre-line
+						text-align: center
+						margin-top: 0
+						line-height: 1.4
+					.offers
+						.topform-price
+							margin-top: 4px
+							text-align: center
+							font-size: 26px
+							b
+								display: inline-block
+								padding: 0px 10px
+								border-radius: 4px
+								font-weight: 300
+								font-size: 16px
+								background: #ffe400
+								vertical-align: top
+								margin-top: 9px
+							.topform-price-strike
+								font-weight: 300
+								text-decoration: line-through
+							.topform-price-yellow
+								color: #ff4200
+								font-weight: 700
+					.topform-count
+						font-size: 17px
+						font-weight: 300
+						text-align: center
+					.topform-wrapper
+						margin-top: 30px
+						.form-group
+							input
+								display: block;
+								border: 2px solid #999
+								color: #fff
+								text-transform: uppercase
+								margin: 0 auto
+								background: none
+								height: 53px
+								line-height: 53px
+								font-size: 13px
+								padding: 0 20px
+								outline: none
+								color: #999
+								background: #fff
+								width: 270px
+							.help-block
+								color: red
+								font-size: 14px
+								width: 304px
+								margin: 0 auto
+								height: 20px
+								line-height: 20px
+						.btn
+							margin: 0 auto
+							border: 0
+							height: 53px
+							line-height: 53px
+							text-transform: uppercase
+							font-weight: 700
+							font-size: 15px
+							display: block
+							text-align: center
+							width: 270px
+							background: #30b530
+							color: #fff
+					.topform-payment
+						font-size: 15px
+						margin-top: 15px
+						margin-bottom: 0
+						text-align: center
+						white-space: pre-line
+						font-weight: 300
+				.topform-privacy
+					text-align: center
+					margin: 20px 0 0
+					a
+						color: #151515
+						border-bottom: 1px solid hsla(0, 0%, 10%, 0.3)
+						background: #fff
+						font-size: 13px
+						&:hover
+							border-bottom: 0
+							text-decoration: none
 
 
 @import "media" // Always at the end
