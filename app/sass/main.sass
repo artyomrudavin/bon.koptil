@@ -13,7 +13,7 @@ body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.65
+	line-height: 1.5
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
@@ -38,11 +38,49 @@ body
 b, strong
 	font-weight: bold
 
-// a
-// 	text-decoration: none
+img
+	vertical-align: middle
 
 .visible-xs
 	display: none
+
+.box-present-1, .box-present-11
+	background-image: url(../img/p-shepa.png)
+	background-repeat: no-repeat
+	background-size: 54px
+
+.box-present-2, .box-present-22
+	background-image: url(../img/p-shagat.png)
+	background-repeat: no-repeat
+	background-size: 56px
+.box-present-3, .box-present-33
+	background-image: url(../img/p-book.png)
+	background-repeat: no-repeat
+	background-size: 54px
+
+section
+	.container
+		.title__block
+			.title__line
+				margin-bottom: 50px
+				text-align: center
+				h2
+					font-size: 30px
+					line-height: 1.1
+					.info__preHeader
+						font-size: 38px
+						font-weight: 200
+					.info__header
+						font-size: 38px
+						font-weight: bold
+						margin-bottom: 10px
+						margin-top: 5px
+				.info__postHeader
+					font-size: 26px
+					color: #a89b93
+					font-weight: 200
+
+/* Header Start */
 
 .menu__fixed
 	position: fixed
@@ -66,7 +104,7 @@ b, strong
 						.menu-item
 							font-size: 15px
 							text-align: center
-							font-weight: 700
+							font-weight: bold
 							cursor: pointer
 							text-transform: uppercase
 							padding: 12px 0
@@ -88,7 +126,7 @@ b, strong
 	margin-bottom: 0px
 	.container
 		.row
-			.col-sm-7
+			.col-md-7
 				.logo
 					margin-top: 54px
 					height: 44px
@@ -97,13 +135,13 @@ b, strong
 						margin-right: 15px
 					.logo-text
 						font-size: 16px
-						font-weight: 100
+						font-weight: 200
 						color: #111
 						text-align: left
 						white-space: pre-line
 						line-height: 22px
 						height: 44px
-			.col-sm-5
+			.col-md-5
 				position: relative
 				display: flex
 				justify-content: flex-end
@@ -169,18 +207,6 @@ b, strong
 								color: red
 								text-decoration: none
 								font-size: 18px
-					.box-present-1
-						background-image: url(../img/p-shepa.png)
-						background-repeat: no-repeat
-						background-size: 54px
-					.box-present-2
-						background-image: url(../img/p-shagat.png)
-						background-repeat: no-repeat
-						background-size: 56px
-					.box-present-3
-						background-image: url(../img/p-book.png)
-						background-repeat: no-repeat
-						background-size: 54px
 			.topForm
 				margin-top: 70px
 				.topform-content
@@ -252,7 +278,7 @@ b, strong
 							height: 53px
 							line-height: 53px
 							text-transform: uppercase
-							font-weight: 700
+							font-weight: bold
 							font-size: 15px
 							display: block
 							text-align: center
@@ -265,7 +291,7 @@ b, strong
 						margin-bottom: 0
 						text-align: center
 						white-space: pre-line
-						font-weight: 300
+						// font-weight: 300
 				.topform-privacy
 					text-align: center
 					margin: 20px 0 0
@@ -277,6 +303,312 @@ b, strong
 						&:hover
 							border-bottom: 0
 							text-decoration: none
+
+/* Header End */
+
+/* Complectaciya Start */
+
+.complectaciya
+	.container
+		.row
+			.title
+				text-align: center
+				white-space: pre-line
+				padding: 0 15px
+				width: 100%
+				h2
+					font-size: 38px
+					line-height: 47px
+		.row
+			.complete-wrapper
+				margin: 77px -130px 0
+				position: relative
+				.col-md-12
+					width: 100%
+					.abs-presn
+						margin: 0
+						list-style: none
+						position: absolute
+						top: -42px
+						right: 146px
+						padding: 10px
+						border: 1px solid #f29a72
+						background: #fff
+						li
+							margin-bottom: 10px
+							padding-left: 75px
+							height: 56px
+							font-weight: bold
+							font-size: 16px
+							letter-spacing: -0.5px
+							div
+								font-weight: normal
+								text-decoration: line-through
+								color: #5d5d5d
+								span
+									display: inline-block
+									margin-left: 10px
+									font-weight: bold
+									color: red
+									text-decoration: none
+									font-size: 18px
+					
+/* Complectaciya End */
+
+/* Info Start */
+
+.info
+	margin-bottom: 20px
+	background: url(../img/bgInfo.jpg)
+	padding-top: 80px
+	padding-bottom: 80px
+	background-attachment: fixed
+	.container
+		.row
+			.col-12
+				.info__mainImg
+					position: relative
+					margin-top: 15px
+					margin-bottom: 15px
+					img
+						margin: auto
+					.info__mainImg_container
+						position: absolute
+						display: flex
+						top: 0
+						left: 0
+						right: 0
+						bottom: 0
+						.info__mainImg_containerWrap
+							margin: auto
+							.info__mainImg_text, .info__mainImg_title
+								color: #fff
+								text-align: center
+								line-height: 1
+							.info__mainImg_text
+								font-weight: 200
+								font-size: 28px
+								margin-bottom: 5px
+							.info__mainImg_title
+								font-weight: bold
+								font-size: 38px
+				.info__item
+					margin-top: 40px
+					.row								
+						.col-12
+							.info__headerList
+								font-size: 20px
+								font-weight: bold
+								color: #000
+								text-align: left
+							.info__list
+								list-style: none
+								padding: 0
+								li
+									margin-left: 25px
+									position: relative
+									font-size: 17px
+									font-weight: 200
+									text-align: left
+									&:before
+										content: ""
+										display: block
+										position: absolute
+										background: url(../img/infoCircle.png)
+										width: 10px
+										height: 10px
+										left: -25px
+										top: 9px
+/* Info End */
+
+/* Advantage Start */
+
+.advantage
+	padding-top: 50px
+	.container
+		.adv__block
+			margin-bottom: 70px
+		.row
+			.adv1
+				padding-top: 120px
+			.col-md-4, .col-md-6, .col-md-8
+				h3
+					color: #ffe400
+					line-height: 30px
+					font-weight: normal
+					font-style: normal
+					font-size: 26px
+					text-align: center
+					margin-bottom: 20px
+				.adv__list
+					border-top: 1px solid #111
+					border-bottom: 1px solid #111
+					padding: 20px 5px 20px
+					li
+						list-style: none
+						text-align: center
+						margin-bottom: 15px
+						&:last-child
+							margin-bottom: 0
+						p
+							margin-bottom: 0
+						.adv__title
+							color: #808080
+							text-transform: uppercase
+							font-size: 18px
+							margin-bottom: 5px
+						.adv__text
+							font-weight: normal
+						.adv__attent
+							font-size: 20px
+							font-weight: bold
+		.row
+			.adv2
+				.row
+					.col-4
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+/* Advantage End */
+
+/* Meals Start */
+
+.meals
+	background-color: #f6f5f4
+	padding-top: 50px
+	.container
+		.row
+			.recipe-content
+				.recipe-wrapper
+					position: relative
+					background-color: #fff
+					margin-bottom: 50px
+					&:before
+						content: " "
+						display: block
+						position: absolute
+						width: 100%
+						height: 100%
+						background: url(../img/recipe-background.png) no-repeat 0 0
+						background-size: contain
+						top: 0
+						left: 0
+					.recipe-time
+						position: absolute
+						top: 13px
+						left: 41px
+						color: #fff
+						font-size: 17px
+						font-weight: bold
+						span
+							font-size: 13px
+							font-weight: normal
+						&:before
+							content: ''
+							background: url(../img/recipe-time.png) no-repeat 0 0
+							width: 17px
+							height: 17px
+							position: absolute
+							top: 3px
+							left: -26px
+					.recipe
+						padding: 20px 25px 25px
+						.recipe-title
+							margin-bottom: 20px
+							h4
+								font-weight: bold
+								font-size: 14px
+								text-transform: uppercase
+								margin: 0
+						.recipe-price
+							display: flex
+							color: #000
+							text-transform: uppercase
+							line-height: 15px
+							flex-wrap: wrap
+							span
+								font-size: 13px
+								font-weight: normal
+							.recipe-price-wrapper
+								margin-right: 28px
+								display: flex
+								.recipe-price-text
+									font-size: 10px
+									margin: 12px 10px 0 0
+								.recipe-price-store, .recipe-price-home
+									flex: 0 0 auto
+									text-align: center
+									font-size: 17px
+									width: 42px
+									height: 47px
+									font-weight: bold
+									padding-top: 9px
+								.recipe-price-store
+									background: url(../img/recipe-price-store.png) no-repeat 0 0
+								.recipe-price-home
+									background: url(../img/recipe-price-home.png) no-repeat 0 0
+/* Meals End */
+
+/* Catalog Start */
+
+.catalog
+	padding-top: 50px
+	padding-bottom: 50px
+	background: url(../img/c_bgc.jpg) repeat
+	background-attachment: fixed
+	.container
+		.row
+			.cat__item
+				.cat__wrapper
+					background-color: #f4f4f4
+					padding: 20px 40px
+					.cat__inner
+						text-align: center
+						.h4
+							font-size: 18px
+							line-height: 22px
+							font-weight: bold
+							text-transform: uppercase
+							span
+								font-size: 20px
+						img
+							margin-bottom: 20px
+						.cat__price
+							margin-bottom: 20px
+							span
+								font-weight: normal
+								text-decoration: line-through
+								font-size: 22px
+								color: #666
+								margin-right: 5px
+							strong
+								color: #ffb405
+								font-size: 36px
+								letter-spacing: -1px
+						.cat__button
+							margin-bottom: 20px
+							.btn
+								margin: 0 auto
+								border: 0
+								height: 53px
+								line-height: 53px
+								text-transform: uppercase
+								font-weight: bold
+								font-size: 15px
+								display: block
+								text-align: center
+								width: 100%
+								background: #30b530
+								color: #fff
+						.cat__text
+							padding: 0
+							margin: 0
+							li
+								list-style: none
+								font-size: 14px
+
+
+/* Catalog End */
 
 
 @import "media" // Always at the end
