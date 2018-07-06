@@ -557,7 +557,8 @@ section
 	background: url(../img/c_bgc.jpg) repeat
 	background-attachment: fixed
 	.container
-		.row
+		.cat__block
+			margin-bottom: 50px
 			.cat__item
 				.cat__wrapper
 					background-color: #f4f4f4
@@ -606,9 +607,89 @@ section
 							li
 								list-style: none
 								font-size: 14px
-
+		.gifts__block
+			.gift__item
+				display: flex
+				justify-content: center
+				.wrap
+					position: relative
+					height: 300px
+					width: 300px
+					// margin: 25px
+					&:hover .gift__text
+							transform: translateY(0)
+							opacity: 1
+					&:hover .gift__img
+						transform: scale(0.5) translateY(-100%)
+					.block
+						height: 100%
+						width: 100%
+						position: absolute
+						transition: .35s ease-in-out
+					.gift__text
+						background-color: rgba(1,1,1,0.4)
+						transform: translateY(100%)
+						opacity: 0
+						z-index: 0
+						text-align: center
+						padding: 80px 20px 20px
+						h2
+							color: #fff
+							line-height: 40px
+							font-weight: normal
+							font-size: 38px
+							margin-top: 20px
+							margin-bottom: 10px
+							padding-bottom: 20px
+							font-weight: 200
+							border-bottom: 1px solid #f6f6f6
+						p
+							color: #fce980
+							font-size: 20px
+					.gift__img
+						transform: scale(1)
+						z-index: 1
+						border: 5px solid #fce980
+						border-radius: 50%
+			.left
+				justify-content: flex-end
+			.right
+				justify-content: flex-start
+		.cat__stoim
+			.col-12
+				p
+					text-align: center
+					font-size: 28px
+					padding-top: 40px
+					font-weight: bold
 
 /* Catalog End */
+
+.included
+	background: url(../img/included-background.jpg) no-repeat 50% 50%
+	height: 100vh
+	.container
+		.title__block
+			.title__line
+				.info__header
+					color: #ffb405
+		.row
+			.included-row-one
+				.included-left
+					margin-top: 41px
+					text-align: right
+					float: left
+					width: 240px
+					.included-icon
+						display: inline-block
+					.included-icon-quality
+						background: url(../img/included-icon-quality.png) no-repeat 0 0
+						width: 90px
+						height: 52px
+					.included-text
+						font-size: 17px
+						white-space: pre-line
+						font-weight: normal
 
 
 @import "media" // Always at the end
