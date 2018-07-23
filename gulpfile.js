@@ -8,7 +8,11 @@ var gulp          = require('gulp'),
 		uglify        = require('gulp-uglify'),
 		cleancss      = require('gulp-clean-css'),
 		rename        = require('gulp-rename'),
+		del           = require('del'),
+		imagemin      = require('gulp-imagemin'),
+		cache         = require('gulp-cache'),
 		autoprefixer  = require('gulp-autoprefixer'),
+		ftp            = require('vinyl-ftp'),
 		notify        = require("gulp-notify"),
 		rsync         = require('gulp-rsync');
 
@@ -37,6 +41,7 @@ gulp.task('styles', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/js/phoneMask.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
@@ -58,6 +63,68 @@ gulp.task('rsync', function() {
 		silent: false,
 		compress: true
 	}))
+});
+
+gulp.task('imagemin', function() {
+	return gulp.src('app/img/**/*')
+	.pipe(cache(imagemin())) // Cache Images
+	.pipe(gulp.dest('dist/img')); 
+});
+
+gulp.task('removedist', function() { return del.sync('dist'); });
+gulp.task('clearcache', function () { return cache.clearAll(); });
+
+gulp.task('build', ['removedist', 'imagemin', 'styles', 'js'], function() {
+
+	var buildFiles = gulp.src([
+		'app/*.html',
+		'app/.htaccess',
+		'app/robots.txt',
+		'app/*.php',
+		]).pipe(gulp.dest('dist'));
+
+	var buildFilesSps = gulp.src([
+		'app/sps/*.html',
+		]).pipe(gulp.dest('dist/sps'));
+
+	var buildFilesPc = gulp.src([
+		'app/politika-konfidencialnosti/*.html',
+		]).pipe(gulp.dest('dist/politika-konfidencialnosti'));
+
+	var buildCss = gulp.src([
+		'app/css/main.min.css',
+		'app/css/sps.min.css',
+		'app/css/pc.min.css',
+		]).pipe(gulp.dest('dist/css'));
+
+	var buildJs = gulp.src([
+		'app/js/scripts.min.js',
+		]).pipe(gulp.dest('dist/js'));
+
+	var buildFonts = gulp.src([
+		'app/fonts/**/*',
+		]).pipe(gulp.dest('dist/fonts'));
+
+});
+
+gulp.task('deploy', function() {
+
+	var conn = ftp.create({
+		host:      '213.186.35.224',
+		user:      'user16855',
+		password:  'pleifynsKV8T',
+		parallel:  5,
+		log: gutil.log
+	});
+
+	var globs = [
+	'dist/**',
+	'dist/.htaccess',
+	];
+	return gulp.src(globs, {buffer: false})
+	.pipe(conn.dest('/www/bondareff.com.ua/'));
+	// .pipe(conn.dest('/www/www.compact.aquagradus.in.ua/'));
+
 });
 
 gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {

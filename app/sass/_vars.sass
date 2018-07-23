@@ -3,6 +3,9 @@ $accent: orange
 $text: #333
 $light-grey: #f6f6f6
 
+@function rem($pxsize, $rembase: 16)
+	@return ($pxsize/$rembase)+rem
+
 // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px
 $grid-columns: 12

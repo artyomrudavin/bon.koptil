@@ -10,8 +10,8 @@
 	color: #fff
 
 body
-	font-size: 16px
-	min-width: 320px
+	font-size: rem(16)
+	min-width: rem(320)
 	position: relative
 	line-height: 1.5
 	font-family: $default-font
@@ -41,44 +41,118 @@ b, strong
 img
 	vertical-align: middle
 
-.visible-xs
-	display: none
-
 .box-present-1, .box-present-11
-	background-image: url(../img/p-shepa.png)
+	background-image: url(../img/gift1.png)
 	background-repeat: no-repeat
-	background-size: 54px
+	background-size: rem(54)
 
 .box-present-2, .box-present-22
-	background-image: url(../img/p-shagat.png)
+	background-image: url(../img/gift2.png)
 	background-repeat: no-repeat
-	background-size: 56px
+	background-size: rem(56)
 .box-present-3, .box-present-33
-	background-image: url(../img/p-book.png)
+	background-image: url(../img/gift3.png)
 	background-repeat: no-repeat
-	background-size: 54px
+	background-size: rem(54)
 
+// heads
 section
 	.container
 		.title__block
 			.title__line
-				margin-bottom: 50px
+				margin-bottom: rem(10)
 				text-align: center
 				h2
 					font-size: 30px
 					line-height: 1.1
 					.info__preHeader
-						font-size: 38px
+						font-size: 24px
 						font-weight: 200
 					.info__header
-						font-size: 38px
+						font-size: 24px
 						font-weight: bold
-						margin-bottom: 10px
-						margin-top: 5px
+						margin-bottom: rem(10)
+						margin-top: rem(5)
 				.info__postHeader
-					font-size: 26px
+					font-size: 18px
 					color: #a89b93
 					font-weight: 200
+		.title-text
+			margin-top: rem(15)
+			color: #777
+			font-size: 17px
+			font-weight: 200
+			text-align: center
+
+// forms
+section
+	.container
+		.row
+			.col-12
+				.form-wrapper
+					margin-top: rem(40)
+					border: 5px solid #fc0
+					padding-bottom: rem(50)
+					margin-bottom: rem(30)
+					.row
+						.col-md-offset-1
+							margin-left: 8.33333333%
+						.col-md-10
+							width: 83.33333333%
+						.form-title
+							font-size: 18px
+							line-height: rem(20)
+							font-weight: 200
+							background-color: #fff
+							text-align: center
+							margin-top: rem(-21)
+							strong
+								display: inline
+					.form
+						display: flex
+						flex-direction: column
+						justify-content: center
+						.form-input-wrapper
+							margin: rem(-4) 0 rem(4)
+							input
+								margin: rem(10) auto
+								height: rem(53)
+								line-height: rem(53)
+								color: #000
+								width: 90%
+								font-size: 13px
+								text-transform: uppercase
+								padding: 0 rem(20)
+								background-color: #f1f1f1
+								border: 0
+								display: block
+							.btn
+								margin: rem(10) auto
+								width: 90%
+								box-shadow: rem(8p)rem(13) rem(30) 0 rgba(177,146,0,.2)
+								background-color: #ffe400
+								border: 0
+								height: rem(53)
+								line-height: rem(53)
+								text-transform: uppercase
+								font-weight: 700
+								font-size: 15px
+								display: block
+								text-align: center
+								color: #000
+								cursor: pointer
+								&:hover
+									background-color: darken(#ffe400, 10%)
+
+.timer
+	display: flex
+	font-size: 26px
+	font-weight: bold
+	text-align: center
+	#days1, #hours1, #minutes1, #seconds1
+		min-width: rem(32)
+		.delimiter
+			width: rem(15)
 
 /* Header Start */
 
@@ -94,11 +168,32 @@ section
 	.container
 		.row
 			.col-12
+				.menu-mobile
+					border-bottom: 2px solid #ececec
+					text-align: center
+					.menu-button
+						padding: rem(13) 0
+						display: inline-block
+						vertical-align: middle
+						margin-right: rem(15)
+						span
+							width: rem(40)
+							height: rem(3)
+							margin-bottom: rem(5)
+							background-color: #2a8fc5
+							display: block
+					.menu-button-text
+						display: inline-block
+						vertical-align: middle
+						font-size: 18px
+						color: #000
+						text-transform: uppercase
 				.menu
-					display: flex
-					justify-content: space-between
+					flex-direction: column
 					border-bottom: 2px solid #ececec
 					margin-bottom: 0
+					padding: 0
+					display: none
 					li
 						list-style: none
 						.menu-item
@@ -107,79 +202,82 @@ section
 							font-weight: bold
 							cursor: pointer
 							text-transform: uppercase
-							padding: 12px 0
+							padding: rem(12) 0
 							border-bottom: 2px solid transparent
 							color: #000
 							display: block
-							margin: 0 5px -2px
+							margin: 0
 							&:hover
 								border-bottom: 2px solid #fc0
 								color: #fc0
 								text-decoration: none
 
 .header
-	margin-top: 20px
-	background: url(../img/zol-f2.jpg) no-repeat 50% 59% $light-grey
+	background: url(../img/zol-f2.jpg) no-repeat 50% 45% $light-grey
 	position: relative
-	padding-bottom: 70px
+	padding-bottom: rem(20)
 	overflow: hidden
-	margin-bottom: 0px
+	margin-bottom: 0
 	.container
 		.row
 			.col-md-7
 				.logo
-					margin-top: 54px
-					height: 44px
+					margin-top: rem(54)
+					height: rem(44)
 					display: flex
+					flex-direction: column
 					img
-						margin-right: 15px
+						margin-right: rem(15)
+						width: rem(190)
+						flex: 1 0 auto
 					.logo-text
 						font-size: 16px
 						font-weight: 200
 						color: #111
 						text-align: left
 						white-space: pre-line
-						line-height: 22px
-						height: 44px
+						line-height: rem(22)
+						height: rem(44)
 			.col-md-5
 				position: relative
 				display: flex
-				justify-content: flex-end
+				text-align: center
+				justify-content: center
 				.phone
-					margin: 40px 0 10px
+					margin: rem(60) 0 rem(10)
 					display: flex
 					flex-direction: column
 					.phone-number
 						position: relative
-						font-size: 28px
-						line-height: 31px
+						font-size: 22px
+						line-height: rem(31)
 						color: #111
 						&:before
 							content: ""
 							display: block
-							width: 21px
-							height: 21px
+							width: rem(21)
+							height: rem(21)
 							background: url(../img/phone.png) no-repeat 50% 50%
 							position: absolute
-							left: -35px
-							top: 5px
+							left: 0
+							top: rem(5)
 					.phone-text
 						color: #111
-						font-size: 16px
+						font-size: 14px
 		.row
 			.caption
-				margin-top: 32px
+				margin-top: rem(16)
 				.h1
-					font-size: 42px
-					line-height: 43px
+					font-size: 32px
+					line-height: rem(33)
 					white-space: pre-line
 				.caption-subs
-					font-weight: 300
+					font-weight: 200
 					color: #111
-					font-size: 21px
+					font-size: 18px
 			.box-present
+				display: none
 				.h-present-1
-					margin-top: 33px
 					font-weight: bold
 					font-size: 20px
 					span
@@ -188,11 +286,11 @@ section
 					margin: 0
 					padding: 0
 					list-style: none
-					margin-top: 14px
+					margin-top: rem(14)
 					li
-						margin-bottom: 10px
-						padding-left: 75px
-						height: 56px
+						margin-bottom: rem(10)
+						padding-left: rem(75)
+						height: rem(56)
 						font-weight: bold
 						font-size: 16px
 						letter-spacing: -0.5px
@@ -202,19 +300,19 @@ section
 							color: #5d5d5d
 							span
 								display: inline-block
-								margin-left: 10px
+								margin-left: rem(10)
 								font-weight: bold
 								color: red
 								text-decoration: none
 								font-size: 18px
 			.topForm
-				margin-top: 70px
+				margin-top: rem(280)
 				.topform-content
 					border: 1px solid #333
-					background: #fff
-					padding-top: 10px
-					padding-bottom: 20px
-					margin-bottom: 15px
+					background: rgba(255,255,255,0.85)
+					padding-top: rem(10)
+					padding-bottom: rem(20)
+					margin-bottom: rem(5)
 					.topform-title
 						color: #111
 						font-size: 17px
@@ -225,18 +323,18 @@ section
 						line-height: 1.4
 					.offers
 						.topform-price
-							margin-top: 4px
+							margin-top: rem(4)
 							text-align: center
 							font-size: 26px
 							b
 								display: inline-block
-								padding: 0px 10px
+								padding: 0 rem(10)
 								border-radius: 4px
 								font-weight: 300
 								font-size: 16px
 								background: #ffe400
 								vertical-align: top
-								margin-top: 9px
+								margin-top: rem(9)
 							.topform-price-strike
 								font-weight: 300
 								text-decoration: line-through
@@ -247,59 +345,63 @@ section
 						font-size: 17px
 						font-weight: 300
 						text-align: center
+						span
+							font-size: 26px
+							color: red
+							font-weight: bold
 					.topform-wrapper
-						margin-top: 30px
+						margin-top: rem(20)
 						.form-group
 							input
 								display: block;
 								border: 2px solid #999
-								color: #fff
 								text-transform: uppercase
 								margin: 0 auto
 								background: none
-								height: 53px
-								line-height: 53px
+								height: rem(53)
+								line-height: rem(53)
 								font-size: 13px
-								padding: 0 20px
+								padding: 0 rem(20)
 								outline: none
-								color: #999
+								color: #000
 								background: #fff
-								width: 270px
+								width: rem(270)
 							.help-block
 								color: red
 								font-size: 14px
-								width: 304px
+								width: rem(304)
 								margin: 0 auto
-								height: 20px
-								line-height: 20px
+								height: rem(20)
+								line-height: rem(20)
 						.btn
 							margin: 0 auto
 							border: 0
-							height: 53px
-							line-height: 53px
+							height: rem(53)
+							line-height: rem(53)
 							text-transform: uppercase
 							font-weight: bold
 							font-size: 15px
 							display: block
 							text-align: center
-							width: 270px
+							width: rem(270)
 							background: #30b530
 							color: #fff
+							cursor: pointer
+							&:hover
+								background-color: darken(#30b530, 10%)
 					.topform-payment
-						font-size: 15px
-						margin-top: 15px
+						font-size: 13px
+						margin-top: rem(15)
 						margin-bottom: 0
 						text-align: center
-						white-space: pre-line
-						// font-weight: 300
 				.topform-privacy
 					text-align: center
-					margin: 20px 0 0
+					margin: 0
 					a
 						color: #151515
 						border-bottom: 1px solid hsla(0, 0%, 10%, 0.3)
 						background: #fff
-						font-size: 13px
+						font-size: 10px
 						&:hover
 							border-bottom: 0
 							text-decoration: none
@@ -313,13 +415,15 @@ section
 		background-image: url(../img/smoke-bg.jpg)
 		background-repeat: no-repeat
 		background-size: cover
+		background-position: 80% 50%
 		.container
 			.row
 				.video_wr
+					padding-bottom: rem(20)
 					.thumb-wrap
 						position: relative
 						padding-bottom: 56.25%
-						padding-top: 30px
+						padding-top: rem(30)
 						height: 0
 						overflow: hidden
 						text-align: center
@@ -332,9 +436,9 @@ section
 				.video_text
 					h4
 						color: #fff
-						font-size: 26px
-						padding: 25px
-						text-shadow: 1px 1px 5px #000
+						font-size: 24px
+						padding: rem(15)
+						text-shadow: rem(1) rem(1) rem(5) #000
 
 /* Video End */
 
@@ -345,31 +449,34 @@ section
 		.row
 			.title
 				text-align: center
-				white-space: pre-line
-				padding: 0 15px
+				padding: 0 rem(15)
 				width: 100%
+				white-space: pre-line
 				h2
-					font-size: 38px
-					line-height: 47px
+					font-size: 26px
+					line-height: rem(30)
 		.row
 			.complete-wrapper
-				margin: 77px -130px 0
 				position: relative
+				height: rem(380)
 				.col-md-12
 					width: 100%
+					img
+						width: 100%
 					.abs-presn
-						margin: 0
+						margin: rem(5)
 						list-style: none
 						position: absolute
-						top: -42px
-						right: 146px
-						padding: 10px
+						top: rem(150)
+						left: 0
+						right: 0
+						padding: rem(10)
 						border: 1px solid #f29a72
 						background: #fff
 						li
-							margin-bottom: 10px
-							padding-left: 75px
-							height: 56px
+							margin-bottom: rem(10)
+							padding-left: rem(75)
+							height: rem(56)
 							font-weight: bold
 							font-size: 16px
 							letter-spacing: -0.5px
@@ -379,29 +486,32 @@ section
 								color: #5d5d5d
 								span
 									display: inline-block
-									margin-left: 10px
+									margin-left: rem(10)
 									font-weight: bold
 									color: red
 									text-decoration: none
 									font-size: 18px
+		.row
+			.col-12
+				.form-wrapper
+					border: 5px solid #49cf49
 					
 /* Complectaciya End */
 
 /* Info Start */
 
 .info
-	margin-bottom: 20px
 	background: url(../img/bgInfo.jpg)
-	padding-top: 80px
-	padding-bottom: 80px
+	padding-top: rem(20)
+	padding-bottom: rem(20)
 	background-attachment: fixed
 	.container
 		.row
 			.col-12
 				.info__mainImg
 					position: relative
-					margin-top: 15px
-					margin-bottom: 15px
+					margin-top: rem(15)
+					margin-bottom: rem(15)
 					img
 						margin: auto
 					.info__mainImg_container
@@ -419,25 +529,26 @@ section
 								line-height: 1
 							.info__mainImg_text
 								font-weight: 200
-								font-size: 28px
-								margin-bottom: 5px
+								font-size: 24px
+								margin-bottom: rem(5)
 							.info__mainImg_title
 								font-weight: bold
-								font-size: 38px
+								font-size: 32px
 				.info__item
-					margin-top: 40px
 					.row								
 						.col-12
+							.info__imgCatalog
+								margin: auto
 							.info__headerList
 								font-size: 20px
 								font-weight: bold
 								color: #000
-								text-align: left
+								text-align: center
 							.info__list
 								list-style: none
 								padding: 0
 								li
-									margin-left: 25px
+									margin-left: rem(25)
 									position: relative
 									font-size: 17px
 									font-weight: 200
@@ -447,39 +558,35 @@ section
 										display: block
 										position: absolute
 										background: url(../img/infoCircle.png)
-										width: 10px
-										height: 10px
-										left: -25px
-										top: 9px
+										width: rem(10)
+										height: rem(10)
+										left: rem(-25)
+										top: rem(9)
 /* Info End */
 
 /* Advantage Start */
 
 .advantage
-	padding-top: 50px
+	padding-top: rem(50)
 	.container
-		.adv__block
-			margin-bottom: 70px
 		.row
-			.adv1
-				padding-top: 120px
 			.col-md-4, .col-md-6, .col-md-8
 				h3
 					color: #ffe400
-					line-height: 30px
+					line-height: rem(26)
 					font-weight: normal
 					font-style: normal
-					font-size: 26px
+					font-size: 24px
 					text-align: center
-					margin-bottom: 20px
+					margin-bottom: rem(20)
 				.adv__list
 					border-top: 1px solid #111
 					border-bottom: 1px solid #111
-					padding: 20px 5px 20px
+					padding: rem(20) rem(5) rem(20)
 					li
 						list-style: none
 						text-align: center
-						margin-bottom: 15px
+						margin-bottom: rem(15)
 						&:last-child
 							margin-bottom: 0
 						p
@@ -488,12 +595,15 @@ section
 							color: #808080
 							text-transform: uppercase
 							font-size: 18px
-							margin-bottom: 5px
+							margin-bottom: rem(5)
 						.adv__text
 							font-weight: normal
 						.adv__attent
-							font-size: 20px
+							font-size: 16px
 							font-weight: bold
+				.adv__img
+					max-width: 70%
+					margin: 0 auto
 		.row
 			.adv2
 				.row
@@ -501,20 +611,25 @@ section
 						display: flex
 						flex-direction: column
 						justify-content: space-between
+		.row
+			.col-12
+				.form-wrapper
+					border: 5px solid #ccc
+
 /* Advantage End */
 
 /* Meals Start */
 
 .meals
 	background-color: #f6f5f4
-	padding-top: 50px
+	padding-top: rem(25)
 	.container
 		.row
 			.recipe-content
 				.recipe-wrapper
 					position: relative
 					background-color: #fff
-					margin-bottom: 50px
+					margin-bottom: rem(25)
 					&:before
 						content: " "
 						display: block
@@ -527,8 +642,8 @@ section
 						left: 0
 					.recipe-time
 						position: absolute
-						top: 13px
-						left: 41px
+						top: rem(13)
+						left: rem(41)
 						color: #fff
 						font-size: 17px
 						font-weight: bold
@@ -538,93 +653,88 @@ section
 						&:before
 							content: ''
 							background: url(../img/recipe-time.png) no-repeat 0 0
-							width: 17px
-							height: 17px
+							width: rem(17)
+							height: rem(17)
 							position: absolute
-							top: 3px
-							left: -26px
+							top: rem(3)
+							left: rem(-26)
 					.recipe
-						padding: 20px 25px 25px
+						padding: rem(15) rem(25) rem(10)
 						.recipe-title
-							margin-bottom: 20px
 							h4
 								font-weight: bold
 								font-size: 14px
 								text-transform: uppercase
 								margin: 0
-						.recipe-price
-							display: flex
-							color: #000
-							text-transform: uppercase
-							line-height: 15px
-							flex-wrap: wrap
-							span
-								font-size: 13px
-								font-weight: normal
-							.recipe-price-wrapper
-								margin-right: 28px
-								display: flex
-								.recipe-price-text
-									font-size: 10px
-									margin: 12px 10px 0 0
-								.recipe-price-store, .recipe-price-home
-									flex: 0 0 auto
-									text-align: center
-									font-size: 17px
-									width: 42px
-									height: 47px
-									font-weight: bold
-									padding-top: 9px
-								.recipe-price-store
-									background: url(../img/recipe-price-store.png) no-repeat 0 0
-								.recipe-price-home
-									background: url(../img/recipe-price-home.png) no-repeat 0 0
+
 /* Meals End */
 
 /* Catalog Start */
 
 .catalog
-	padding-top: 50px
-	padding-bottom: 50px
+	padding-top: rem(25)
+	padding-bottom: rem(25)
 	background: url(../img/c_bgc.jpg) repeat
 	background-attachment: fixed
 	.container
+		.title__block
+			.title__line
+				.info__postHeader
+					display: flex
+					justify-content: center
+					align-items: center
+					flex-direction: column
 		.cat__block
-			margin-bottom: 50px
+			margin-bottom: rem(25)
 			.cat__item
 				.cat__wrapper
 					background-color: #f4f4f4
-					padding: 20px 40px
+					padding: rem(20) rem(20)
+					width: 100%
+					margin: 0 auto
 					.cat__inner
 						text-align: center
 						.h4
 							font-size: 18px
-							line-height: 22px
+							line-height: rem(22)
 							font-weight: bold
 							text-transform: uppercase
 							span
 								font-size: 20px
 						img
-							margin-bottom: 20px
+							margin-bottom: rem(20)
+							transition: 0.35s
 						.cat__price
-							margin-bottom: 20px
+							margin-bottom: rem(10)
 							span
 								font-weight: normal
 								text-decoration: line-through
 								font-size: 22px
 								color: #666
-								margin-right: 5px
+								margin-right: rem(5)
 							strong
 								color: #ffb405
-								font-size: 36px
+								font-size: 32px
 								letter-spacing: -1px
 						.cat__button
-							margin-bottom: 20px
+							margin-bottom: rem(20)
+							input
+								margin: rem(10) auto
+								height: rem(53)
+								line-height: rem(53)
+								color: #000
+								width: 100%
+								font-size: 13px
+								text-transform: uppercase
+								padding: 0 rem(20)
+								background-color: #fff
+								border: 0
+								display: block
 							.btn
 								margin: 0 auto
 								border: 0
-								height: 53px
-								line-height: 53px
+								height: rem(53)
+								line-height: rem(53)
 								text-transform: uppercase
 								font-weight: bold
 								font-size: 15px
@@ -633,6 +743,9 @@ section
 								width: 100%
 								background: #30b530
 								color: #fff
+								cursor: pointer
+								&:hover
+									background-color: darken(#30b530, 10%)
 						.cat__text
 							padding: 0
 							margin: 0
@@ -643,11 +756,11 @@ section
 			.gift__item
 				display: flex
 				justify-content: center
+				margin-bottom: rem(15)
 				.wrap
 					position: relative
-					height: 300px
-					width: 300px
-					// margin: 25px
+					height: rem(200)
+					width: rem(200)
 					&:hover .gift__text
 							transform: translateY(0)
 							opacity: 1
@@ -664,108 +777,88 @@ section
 						opacity: 0
 						z-index: 0
 						text-align: center
-						padding: 80px 20px 20px
+						padding: rem(35) rem(15) rem(15)
 						h2
 							color: #fff
-							line-height: 40px
+							font-size: 28px
+							line-height: rem(29)
 							font-weight: normal
-							font-size: 38px
-							margin-top: 20px
-							margin-bottom: 10px
-							padding-bottom: 20px
+							margin-top: rem(20)
+							margin-bottom: rem(10)
+							padding-bottom: rem(10)
 							font-weight: 200
 							border-bottom: 1px solid #f6f6f6
 						p
 							color: #fce980
-							font-size: 20px
+							font-size: 15px
 					.gift__img
 						transform: scale(1)
 						z-index: 1
 						border: 5px solid #fce980
 						border-radius: 50%
-			.left
-				justify-content: flex-end
-			.right
-				justify-content: flex-start
 		.cat__stoim
 			.col-12
 				p
 					text-align: center
-					font-size: 28px
-					padding-top: 40px
+					font-size: 22px
+					padding-top: rem(10)
 					font-weight: bold
 
 /* Catalog End */
 
+/* Included Start */
+
 .included
-	background: url(../img/included-background.jpg) no-repeat 50% 50%
-	height: 100vh
+	background: url(../img/included-background.jpg) no-repeat 50% 70%
+	background-size: 300%
+	padding-bottom: rem(25)
 	.container
 		.title__block
 			.title__line
 				.info__header
 					color: #ffb405
 		.row
-			.included-row-one
+			.included-row-one, .included-row-two
 				display: flex
 				width: 100%
 				justify-content: space-between
-				.included-left
-					margin-top: 41px
-					text-align: right
-					width: 240px
+				.included-box
+					padding: rem(5)
+					width: rem(240)
 					.included-icon
+						height: rem(52)
 						display: inline-block
+					.included-text
+						font-size: 15px
+						font-weight: normal
+				.included-left
+					text-align: left
+				.included-right
+					text-align: right
+			.included-row-one
+				.included-box
+					margin-top: rem(15)
+				.included-left
 					.included-icon-quality
 						background: url(../img/included-icon-quality.png) no-repeat 0 0
-						width: 90px
-						height: 52px
-					.included-text
-						font-size: 17px
-						font-weight: normal
+						width: rem(90)
 				.included-right
-					margin-top: 41px
-					text-align: left
-					width: 240px
-					.included-icon
-						display: inline-block
 					.included-icon-loading
 						background: url(../img/included-icon-loading.png) no-repeat 0 0
-						width: 46px
-						height: 61px
-					.included-text
-						font-size: 17px
-						font-weight: normal
+						width: rem(39)
 			.included-row-two
-				display: flex
-				width: 100%
-				justify-content: space-between
-				.included-left
-					margin-top: 190px
-					text-align: right
-					width: 240px
+				.included-box
+					margin-top: rem(210)
 					.included-icon
-						display: inline-block
+						width: rem(41)
+				.included-left
 					.included-icon-quality
 						background: url(../img/included-icon-simple.png) no-repeat 0 0
-						width: 42px
-						height: 53px
-					.included-text
-						font-size: 17px
-						font-weight: normal
 				.included-right
-					margin-top: 190px
-					text-align: left
-					width: 240px
-					.included-icon
-						display: inline-block
 					.included-icon-loading
 						background: url(../img/included-icon-more.png) no-repeat 0 0
-						width: 41px
-						height: 52px
-					.included-text
-						font-size: 17px
-						font-weight: normal
+
+/* Included End */
 
 /* Akci Start */
 
@@ -774,80 +867,27 @@ section
 		.row
 			.col-12
 				.form-wrapper
-					margin-top: 40px
-					border: 5px solid #fc0
-					padding-bottom: 49px
-					.row
-						.col-md-offset-1
-							margin-left: 8.33333333%
-						.col-md-10
-							width: 83.33333333%
-						.form-title
-							font-size: 26px
-							line-height: 33px
-							font-weight: 200
-							background-color: #fff
-							text-align: center
-							margin-top: -21px
-							strong
-								display: inline
 					.row
 						.form-price
 							text-align: center
-							font-size: 38px
+							font-size: 26px
 							width: 100%
 							b
-								display: inline-block
-								padding: 0px 10px
-								border-radius: 4px
+								display: block
 								font-weight: 400
 								font-size: 20px
-								vertical-align: top
-								margin-top: 13px
-								margin-right: 10px
-								line-height: 31px
+								margin-top: rem(13)
+								line-height: rem(22)
 							.topform-price-strike
 								font-weight: normal
 								text-decoration: line-through
-								font-size: 38px
+								font-size: 24px
 								text-align: center
 							.topform-price-yellow
 								color: #fc0
 								font-weight: 400
-					.form
-						display: flex
-						justify-content: center
-						.form-input-wrapper
-							margin: -4px 0 4px
-							input
-								width: 280px
-								margin: 42px 20px 0 0
-								height: 53px
-								line-height: 53px
-								color: #000
-								width: 90%
-								font-size: 13px
-								text-transform: uppercase
-								padding: 0 20px
-								background-color: #f1f1f1
-								border: 0
-								display: block
-							.btn
-								margin: 42px 0 0
-								width: 280px
-								box-shadow: 8px 13px 30px 0 rgba(177,146,0,.2)
-								background-color: #ffe400
-								border: 0
-								height: 53px
-								line-height: 53px
-								text-transform: uppercase
-								font-weight: 700
-								font-size: 15px
-								display: block
-								text-align: center
-								color: #000
 					.title-text
-						margin-top: 15px
+						margin-top: rem(15)
 						color: #777
 						font-size: 17px
 						font-weight: 200
@@ -856,54 +896,52 @@ section
 			.book
 				position: relative
 				display: flex
+				flex-direction: column
 				justify-content: center
-				margin-top: 50px
+				margin-top: rem(15)
+				margin-bottom: rem(15)
 				&:after
 					content: ""
 					display: block
 					position: absolute
 					background: url(../img/book-arrow.png) no-repeat 0 0
-					width: 66px
-					height: 61px
-					left: 50%
-					margin-left: 175px
-					top: -27px
+					width: rem(66)
+					height: rem(61)
+					left: 0
+					top: rem(-40)
+					margin-left: rem(200)
 				.book-img
-					width: 205px
-					height: 147px
-					margin-left: 80px
-					img
-						margin: 0 auto
+					width: rem(205)
+					height: rem(147)
+					margin: 0 auto
 				.book-text
 					font-size: 17px
-					flex: 0 0 320px
-					line-height: 23px
+					flex: 0 0 auto
+					line-height: rem(23)
 					color: #000
 					font-weight: 200
-					margin: 25px 0 0 30px
-					white-space: pre-line
+					text-align: center
 
-/* Akci Start */
+/* Akci End */
 
 /* Reviews Start */
 
 .reviews
-	padding-top: rem(30)
-	padding-bottom: rem(60)
-	.container-fluid
-		max-width: 1140px
+	padding-top: rem(25)
+	padding-bottom: rem(25)
+	.container
 		.h3
-			font-size: 40px
+			font-size: 30px
 			position: relative
-			margin-bottom: rem(60)
+			margin-bottom: rem(50)
 			&:after
 				content: ""
 				width: rem(150)
-				height: 3px
-				background-color: $accent
+				height: rem(3)
+				background-color: #ffe400
 				position: absolute
 				left: 0
-				margin-top: rem(66)
+				margin-top: rem(56)
 		.row
 			.rev-img
 				overflow: hidden
@@ -918,19 +956,182 @@ section
 				.city
 					font-size: 12px
 					margin-bottom: rem(16)
-				.name, .city
-					text-align: center
-				p:last-child
-					margin-bottom: rem(16)
-					text-align: left
 			.mail
 				text-align: center
 				.h4
-					font-size: 20px
-					padding: rem(24)
+					font-size: 18px
+					padding: rem(15)
 				a
-					font-size: 24px
-
+					font-size: 18px
 /* Reviews End */
+
+/* FAQ Start */
+
+.faq
+	padding-top: rem(30)
+	padding-bottom: rem(60)
+	background: url(../img/wood.jpg) no-repeat center center
+	background-attachment: fixed
+	background-size: cover
+	.container
+		.h3
+			font-size: 30px
+			position: relative
+			margin-bottom: rem(60)
+			color: #fff
+			&:after
+				content: ""
+				width: rem(150)
+				height: 3px
+				background-color: #ffe400
+				position: absolute
+				left: 0
+				margin-top: rem(66)
+		.accordeon
+			.card
+				position: relative
+				display: flex
+				flex-direction: column
+			.x-collapse
+				background-color: rgba(244, 244, 244, 0.8)
+				padding: rem(16)
+				margin-bottom: rem(8)
+				padding-left: rem(48)
+				.card-header
+					padding: rem(12) rem(20)
+					margin-bottom: 0
+					.title
+						font-size: 20px
+						.x-link
+							width: 100%
+							position: relative
+							display: block
+							color: $text
+							&:before
+								color: #ffe400
+								content: "-"
+								top: rem(-15)
+								left: rem(-50)
+								position: absolute
+								font-size: 48px
+								font-weight: 300
+							&.collapsed:before
+								content: "+"
+				.collapse
+					.card-block
+						flex: 1 1 auto
+						padding: rem(20)
+						.link
+							display: inline-block
+							text-align: center
+							width: 50%
+							border-bottom: none
+							text-decoration: underline
+							&:hover
+								text-decoration: none
+							&-one
+								width: 100%
+/* FAQ End */
+
+/* Question Start */
+
+.question
+	padding-top: rem(60)
+	padding-bottom: rem(60)
+	background-color: #ccc
+	.container
+		padding-top: rem(20)
+		background-color: #FFF
+		.h3
+			font-size: 30px
+			position: relative
+			margin-bottom: rem(8)
+			padding-bottom: rem(20)
+		form
+			.row
+				div:not(last-child)
+					padding-bottom: rem(4)
+					input
+						padding: rem(16)
+						color: #000
+						width: 100%
+					.dtn-quest
+						padding: rem(16)
+						cursor: pointer
+						width: 100%
+						font-size: 16px
+						font-style: uppercase
+					input
+						color: #000
+						width: 100%
+						font-size: 13px
+						text-transform: uppercase
+						background-color: #f1f1f1
+						border: 0
+						display: block
+						margin-bottom: rem(10)
+					.btn
+						box-shadow: rem(8) rem(13) rem(30) 0 rgba(177,146,0,.2)
+						background-color: #ffe400
+						border: 0
+						text-transform: uppercase
+						font-weight: 700
+						font-size: 15px
+						display: block
+						text-align: center
+						color: #000
+						cursor: pointer
+						margin-bottom: rem(30)
+						&:hover
+							background-color: darken(#ffe400, 10%)
+
+/* Question End */
+
+/* Footer Start */
+
+.footer
+	background-color: #fc0
+	padding-top: rem(30)
+	padding-bottom: rem(60)
+	color: #fff
+	text-align: center
+	.container-fluid
+		max-width: rem(1140)
+		.row
+			justify-content: center
+			.f-logo
+				img
+					margin: auto
+					padding: rem(20)
+				p
+					padding-bottom: rem(30)
+			.f-work
+				margin-bottom: rem(16)
+				.f-box
+					padding: rem(20) rem(20)
+					border: 3px solid #fff
+					min-height: 100%
+					.title
+						font-size: 24px
+						margin-bottom: rem(8)
+			.f-contact
+				.title
+					font-size: 24px
+				div
+					width: 100%
+					margin: 0 auto
+					a
+						display: block
+						width: 100%
+						color: #fff
+				p, div, .title
+					margin-bottom: rem(8)
+				a
+					color: #fff
+				.politic
+					font-size: 14px
+					text-decoration: underline
+
+/* Footer End */
 
 @import "media" // Always at the end

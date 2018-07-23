@@ -21,24 +21,383 @@
 // ≤576px
 +media-breakpoint-up(sm)
 
+	/* Question Start */
+
+	.question
+		.container-fluid
+			padding: rem(60) rem(100) rem(40) rem(100)
+			
+	/* Question End */
+
 // ≤768px
 +media-breakpoint-up(md)
 
+	.visible-xs
+		display: none
+
+	// heads
+	section
+		.container
+			.title__block
+				.title__line
+					margin-bottom: rem(50)
+					text-align: center
+					h2
+						font-size: 30px
+						line-height: 1.1
+						.info__preHeader
+							font-size: 38px
+							font-weight: 200
+						.info__header
+							font-size: 38px
+							font-weight: bold
+							margin-bottom: rem(10)
+							margin-top: rem(5)x
+					.info__postHeader
+						font-size: 26px
+						color: #a89b93
+						font-weight: 200
+
+	// forms
+	section
+		.container
+			.row
+				.col-12
+					.form-wrapper
+						margin-bottom: rem(50)
+						.row
+							.form-title
+								font-size: 26px
+								line-height: rem(33)
+						.form
+							flex-direction: row
+							.form-input-wrapper
+								input
+									margin: rem(42) rem(20) 0 0
+								.btn
+									margin: rem(42) 0 0
+									width: rem(280)
+
+	/* Header Start */
+
+	.menu-wrapper
+		.container
+			.row
+				.col-12
+					.menu
+						display: flex
+						flex-direction: row
+						justify-content: space-between
+						li
+							.menu-item
+								margin: 0 rem(5) rem(-2)
+
+	.header
+		margin-top: rem(20)
+		background: url(../img/zol-f2.jpg) no-repeat 50% 50% $light-grey //59%
+		padding-bottom: rem(70)
+		.container
+			.row
+				.col-md-7
+					.logo
+						flex-direction: row
+				.col-md-5
+					text-align: right
+					justify-content: flex-end
+					.phone
+						margin: rem(40) 0 rem(10)
+						.phone-number
+							font-size: 28px
+							line-height: rem(31)
+						.phone-text
+							font-size: 16px
+			.row
+				.caption
+					margin-top: rem(32)
+					.h1
+						font-size: 42px
+						line-height: rem(43)
+					.caption-subs
+						font-weight: 300
+						font-size: 21px
+				.box-present
+					display: block
+					.h-present-1
+						margin-top: rem(33)
+				.topForm
+					margin-top: 70px
+					.topform-content
+						margin-bottom: rem(15)
+						.topform-payment
+							font-size: 15px
+							margin-top: rem(15)
+							white-space: pre-line
+					.topform-privacy
+						margin: rem(20) 0 0
+						a
+							font-size: 13px
+
+	/* Header End */
+
+	/* Video Start */
+
+	.video
+		.video-wrap
+			.container
+				.row
+					.video_wr
+						padding-bottom: initial
+					.video_text
+						h4
+							font-size: 26px
+							padding: rem(25)
+
+	/* Video End */
+
+	/* Complectaciya Start */
+
+	.complectaciya
+		.container
+			.row
+				.title
+					h2
+						font-size: 38px
+						line-height: rem(47)
+			.row
+				.complete-wrapper
+					// margin: rem(77) rem(-130) 0
+					height: initial
+					.col-md-12
+						img
+							// width: 80%
+							// margin: 0 auto
+							text-align: center
+						.abs-presn
+							top: rem(-42)
+							right: rem(30)
+							left: initial
+
+	/* Complectaciya End */
+
+	/* Info Start */
+
+	.info
+		padding-top: rem(80)
+		padding-bottom: rem(80)
+		.container
+			.row
+				.col-12
+					.info__mainImg
+						.info__mainImg_container
+							.info__mainImg_containerWrap
+								.info__mainImg_text
+									font-size: 28px
+								.info__mainImg_title
+									font-size: 38px
+					.info__item
+						margin-top: rem(40)
+						.row								
+							.col-12
+								.info__headerList
+									text-align: left
+
+	/* Info End */
+
+	/* Advantage Start */
+
+	.advantage
+		.container
+			.adv__block
+				margin-bottom: rem(70)
+			.row
+				.adv1
+					padding-top: rem(120)
+				.col-md-4, .col-md-6, .col-md-8
+					h3
+						line-height: rem(30)
+						font-size: 26px
+					.adv__list
+						li
+							.adv__attent
+								font-size: 20px
+					.adv__img
+						max-width: 100%
+			
+	/* Advantage End */
+
+	/* Meals Start */
+
+	.meals
+		padding-top: rem(50)
+
+	/* Meals End */
+
+	/* Catalog Start */
+
+	.catalog
+		padding-top: rem(50)
+		padding-bottom: rem(50)
+		.container
+			.title__block
+				.title__line
+					.info__postHeader
+						flex-direction: row
+			.cat__block
+				margin-bottom: rem(50)
+				.cat__item
+					.cat__wrapper
+						padding: rem(20) rem(40)
+						width: 75%
+						.cat__inner
+							.cat__price
+								margin-bottom: rem(20)
+								strong
+									font-size: 36px
+			.gifts__block
+				.gift__item
+					.wrap
+						height: rem(300)
+						width: rem(300)
+						.gift__text
+							padding: rem(80) rem(20) rem(20)
+							h2
+								line-height: rem(40)
+								font-size: 38px
+								padding-bottom: rem(20)
+							p
+								font-size: 20px
+				.left
+					justify-content: flex-end
+				.right
+					justify-content: flex-start
+			.cat__stoim
+				.col-12
+					p
+						font-size: 28px
+						padding-top: rem(40)
+
+	/* Catalog End */
+
+	/* Included Start */
+
+	.included
+		background: url(../img/included-background.jpg) no-repeat 50% 50%
+		padding-bottom: rem(50)
+		.container
+			.row
+				.included-row-one, .included-row-two
+					.included-box
+						.included-text
+							font-size: 17px
+							font-weight: normal
+					.included-left
+						text-align: right
+					.included-right
+						text-align: left
+				.included-row-one
+					.included-box
+						margin-top: rem(41)
+				.included-row-two
+					.included-box
+						margin-top: rem(190)
+
+	/* Included End */
+
+	/* Akci Start */
+
+	.akci
+		.container
+			.row
+				.col-12
+					.form-wrapper
+						.row
+							.form-price
+								font-size: rem(38)
+								b
+									display: inline-block
+									padding: 0 rem(10)
+									border-radius: 4px
+									vertical-align: top
+									margin-right: rem(10)
+									line-height: rem(31)
+								.topform-price-strike
+									font-size: 38px
+			.row
+				.book
+					flex-direction: row
+					margin-top: rem(50)
+					&:after
+						left: 50%
+						margin-left: rem(175)
+						top: rem(-27)
+					.book-img
+						margin: 0 0 0 rem(80)
+					.book-text
+						flex: 0 0 rem(320)
+						margin: rem(25) 0 0 rem(30)
+						white-space: pre-line
+						text-align: left
+
+	/* Akci End */
+
 	/* Reviews Start */
 
-	.recipe
-		.container-fluid
+	.reviews
+		padding-top: rem(30)
+		padding-bottom: rem(60)
+		.container
+			.h3
+				font-size: 38px
+				margin-bottom: rem(60)
+				&:after
+					margin-top: rem(66)
 			.row
-				.recipe-book
-					.recipe-btn
-						padding: rem(16) rem(40)
+				.mail
+					.h4
 						font-size: 20px
-
+						padding: rem(24)
+					a
+						font-size: 24px
 
 	/* Reviews End */
 
+	/* FAQ Start */
+
+	.faq
+		.container
+			.h3
+				font-size: 38px
+				margin-bottom: rem(60)
+				&:after
+					margin-top: rem(66)
+
+	/* FAQ End */
+
+	/* Question Start */
+
+	.question
+		.container
+			.h3
+				font-size: 38px
+
+	/* Question End */
+
 // ≤992px
 +media-breakpoint-up(lg)
+
+	/* Footer Start */
+
+	.footer
+		.container-fluid
+			.row
+				.f-contact
+					div
+						width: 35%
+						a
+							display: inline-block
+							width: 50%
+
+	/* Footer End */
 
 // ≤1200px
 +media-breakpoint-up(xl)
