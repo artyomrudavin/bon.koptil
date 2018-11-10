@@ -39,6 +39,17 @@ $(function() {
 		var mm = date.getMonth() + 1;
 		if (mm < 10) mm = '0' + mm;
 
+		if (dd >= 31) {
+			dd = '03';
+			mm = mm + 1;
+		} else if (dd >= 29) {
+			dd = '01';
+			mm = mm + 1;
+		} else if (dd >= 30) {
+			dd = '02';
+			mm = mm + 1;
+		}
+
 		return dd + '.' + mm;
 	};
 

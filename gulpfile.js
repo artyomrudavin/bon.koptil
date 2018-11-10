@@ -123,7 +123,6 @@ gulp.task('deploy', function() {
 	];
 	return gulp.src(globs, {buffer: false})
 	.pipe(conn.dest('/www/bondareff.com.ua/'));
-	// .pipe(conn.dest('/www/www.compact.aquagradus.in.ua/'));
 
 });
 

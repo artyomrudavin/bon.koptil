@@ -12,6 +12,23 @@ define('CRM_PASSWORD', 'sergpass2018'); // password of a CRM user
 
 /********************************************************************************************/
 
+function get_ip()
+{
+    if (!empty($_SERVER['HTTP_CLIENT_IP']))
+    {
+        $ip=$_SERVER['HTTP_CLIENT_IP'];
+    }
+    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+    {
+        $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    else
+    {
+        $ip=$_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
 // POST processing
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
@@ -25,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         'EMAIL_WORK' => $leadData['EMAIL_WORK'],
         'COMMENTS' => $leadData['COMMENTS'],
         'SOURCE_ID' => $leadData['SOURCE_ID'],
+        'UF_CRM_1539692902' => get_ip()
 	);
 
 	// append authorization data
@@ -91,6 +109,7 @@ $mailData = $_POST['DATA'];
 		'ИМЯ ' => $mailData['NAME'],
 		'EMAIL ' => $mailData['EMAIL_WORK'],
 		'КОММЕНТАРИИ ' => $mailData['COMMENTS'],
+		'IP' => get_ip()
 	);
 
 $strmailPostData = '';
