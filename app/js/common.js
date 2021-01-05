@@ -93,6 +93,9 @@ $(function() {
 
 		console.log('puk');
 		var th = $(this);
+		var submitButton = th.find("button[type='submit']");
+		console.log(submitButton);
+		submitButton.addClass('btn-disable').prop("disabled", true);
 
 		$.ajax({
 			type: "POST",
@@ -102,9 +105,9 @@ $(function() {
 			// alert("Thank you!");
 			setTimeout(function() {
 				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-			location.href = "https://bondareff.com.ua/sps/";
+				location.href = "https://bondareff.com.ua/sps/";
+				// th.trigger("reset");
+			}, 500);
 		});
 		return false;
 	});
