@@ -1,4 +1,6 @@
-var syntax        = 'sass'; // Syntax: sass or scss;
+var syntax         = 'sass', // Syntax: sass or scss;
+		gulpVersion    = '4'; // Gulp version: 3 or 4
+		gmWatch        = false; // ON/OFF GraphicsMagick watching "img/_src" folder (true/false). Linux install gm: sudo apt update; sudo apt install graphicsmagick
 
 var gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
@@ -8,14 +10,14 @@ var gulp          = require('gulp'),
 		uglify        = require('gulp-uglify'),
 		cleancss      = require('gulp-clean-css'),
 		rename        = require('gulp-rename'),
-		del           = require('del'),
-		imagemin      = require('gulp-imagemin'),
-		cache         = require('gulp-cache'),
 		autoprefixer  = require('gulp-autoprefixer'),
-		ftp            = require('vinyl-ftp'),
-		notify        = require("gulp-notify"),
-		rsync         = require('gulp-rsync');
+		notify        = require('gulp-notify'),
+		rsync         = require('gulp-rsync'),
+		imageResize   = require('gulp-image-resize'),
+		imagemin      = require('gulp-imagemin'),
+		del           = require('del');
 
+// Local Server
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
@@ -28,6 +30,7 @@ gulp.task('browser-sync', function() {
 	})
 });
 
+// Sass|Scss Styles
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
@@ -38,18 +41,41 @@ gulp.task('styles', function() {
 	.pipe(browserSync.stream())
 });
 
-gulp.task('js', function() {
+// JS
+gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/js/phoneMask.min.js',
+		'app/libs/videoJs/video.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
+// JS UA
+gulp.task('scripts-ua', function() {
+	return gulp.src([
+		'app/libs/jquery/dist/jquery.min.js',
+		'app/js/phoneMask.min.js',
+		'app/libs/videoJs/video.js',
+		'app/js/ua.common.js', // Always at the end
+		])
+	.pipe(concat('ua.scripts.min.js'))
+	.pipe(uglify()) // Mifify js (opt.)
+	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.reload({ stream: true }))
+});
+
+// HTML Live Reload
+gulp.task('code', function() {
+	return gulp.src('app/*.html')
+	.pipe(browserSync.reload({ stream: true }))
+});
+
+// Deploy
 gulp.task('rsync', function() {
 	return gulp.src('app/**')
 	.pipe(rsync({
@@ -65,71 +91,59 @@ gulp.task('rsync', function() {
 	}))
 });
 
-gulp.task('imagemin', function() {
-	return gulp.src('app/img/**/*')
-	.pipe(cache(imagemin())) // Cache Images
-	.pipe(gulp.dest('dist/img')); 
+// Images @x1 & @x2 + Compression | Required graphicsmagick (sudo apt update; sudo apt install graphicsmagick)
+gulp.task('img1x', function() {
+	return gulp.src('app/img/_src/**/*.*')
+	.pipe(imageResize({ width: '50%' }))
+	.pipe(imagemin())
+	.pipe(gulp.dest('app/img/@1x/'))
+});
+gulp.task('img2x', function() {
+	return gulp.src('app/img/_src/**/*.*')
+	.pipe(imageResize({ width: '100%' }))
+	.pipe(imagemin())
+	.pipe(gulp.dest('app/img/@2x/'))
 });
 
-gulp.task('removedist', function() { return del.sync('dist'); });
-gulp.task('clearcache', function () { return cache.clearAll(); });
-
-gulp.task('build', ['removedist', 'imagemin', 'styles', 'js'], function() {
-
-	var buildFiles = gulp.src([
-		'app/*.html',
-		'app/.htaccess',
-		'app/robots.txt',
-		'app/*.php',
-		]).pipe(gulp.dest('dist'));
-
-	var buildFilesSps = gulp.src([
-		'app/sps/*.html',
-		]).pipe(gulp.dest('dist/sps'));
-
-	var buildFilesPc = gulp.src([
-		'app/politika-konfidencialnosti/*.html',
-		]).pipe(gulp.dest('dist/politika-konfidencialnosti'));
-
-	var buildCss = gulp.src([
-		'app/css/main.min.css',
-		'app/css/sps.min.css',
-		'app/css/pc.min.css',
-		]).pipe(gulp.dest('dist/css'));
-
-	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
-		]).pipe(gulp.dest('dist/js'));
-
-	var buildFonts = gulp.src([
-		'app/fonts/**/*',
-		]).pipe(gulp.dest('dist/fonts'));
-
+// Clean @*x IMG's
+gulp.task('cleanimg', function() {
+	return del(['app/img/@*'], { force:true })
 });
 
-gulp.task('deploy', function() {
+// If Gulp Version 3
+if (gulpVersion == 3) {
 
-	var conn = ftp.create({
-		host:      '213.186.35.224',
-		user:      'user16855',
-		password:  'pleifynsKV8T',
-		parallel:  5,
-		log: gutil.log
+	// Img Processing Task for Gulp 3
+	gulp.task('img', ['img1x', 'img2x']);
+	
+	var taskArr = ['styles', 'scripts', 'scripts-ua', 'browser-sync'];
+	gmWatch && taskArr.unshift('img');
+
+	gulp.task('watch', taskArr, function() {
+		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
+		gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['scripts']);
+		gulp.watch(['libs/**/*.js', 'app/js/ua.common.js'], ['scripts-ua']);
+		gulp.watch('app/*.html', ['code']);
+		gmWatch && gulp.watch('app/img/_src/**/*', ['img']);
 	});
+	gulp.task('default', ['watch']);
 
-	var globs = [
-	'dist/**',
-	'dist/.htaccess',
-	];
-	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/www/bondareff.com.ua/'));
+};
 
-});
+// If Gulp Version 4
+if (gulpVersion == 4) {
 
-gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
-	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
-	gulp.watch('app/*.html', browserSync.reload)
-});
+	// Img Processing Task for Gulp 4
+	gulp.task('img', gulp.parallel('img1x', 'img2x'));
 
-gulp.task('default', ['watch']);
+	gulp.task('watch', function() {
+		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
+		gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('scripts'));
+		gulp.watch(['libs/**/*.js', 'app/js/ua.common.js'], gulp.parallel('scripts-ua'));
+		gulp.watch('app/*.html', gulp.parallel('code'));
+		gmWatch && gulp.watch('app/img/_src/**/*', gulp.parallel('img')); // GraphicsMagick watching image sources if allowed.
+	});
+	gmWatch ? gulp.task('default', gulp.parallel('img', 'styles', 'scripts', 'scripts-ua', 'browser-sync', 'watch')) 
+					: gulp.task('default', gulp.parallel('styles', 'scripts', 'scripts-ua', 'browser-sync', 'watch'));
+
+};

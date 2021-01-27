@@ -117,17 +117,17 @@ $(function() {
 
 	$( '.c_stand' ).hover(
 		function() {
-			$(this).attr('src', 'img/c_copt.jpg');
+			$(this).attr('src', '../img/c_copt.jpg');
 		}, function() {
-			$(this).attr('src', 'img/c_standart.jpg');
+			$(this).attr('src', '../img/c_standart.jpg');
 		}
 	);
 
 	$( '.c_big' ).hover(
 		function() {
-			$(this).attr('src', 'img/c_copt.jpg');
+			$(this).attr('src', '../img/c_copt.jpg');
 		}, function() {
-			$(this).attr('src', 'img/c_big.jpg');
+			$(this).attr('src', '../img/c_big.jpg');
 		}
 	);
 
